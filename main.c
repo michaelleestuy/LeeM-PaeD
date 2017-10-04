@@ -13,7 +13,7 @@ int main(){
   char a[100] = "0123456";
   char b[] = "abc";
 
-  printf("regular: %p\nours: %p\n", strchr(a, '3'), strchr1(a, '3'));
+  printf("regular: %p\nours: %p\n", strchr(a, '7'), strchr1(a, '7'));
 
 
 }
@@ -66,12 +66,13 @@ int strcmp1(char* a1, char* a2){
 }
 
 char* strchr1(char* arr, char a){
-  int i = -1;
-  while(arr[i++]){
+  int i = 0;
+  while(arr[i]){
     if(a == arr[i])
       return &arr[i];
+    i++;
   }
-  return &arr[i];
+  return NULL;
 }
 
 
