@@ -15,7 +15,7 @@ int main(){
   char c[] = "sgag";
   char d[] = "yergysersdfwe";
   printf("a: [%s]\nb: [%s]\nc: [%s]\nd: [%s]\n\n", a, b, c, d);
-  printf("Testing strlen(b):\n[standard]: %d\n[ours]: %d\n\n", strlen(b), strlen1(b));
+  printf("Testing strlen(b):\n[standard]: %lu\n[ours]: %d\n\n", strlen(b), strlen1(b));
   printf("Testing strcpy(c, a):\n[standard]: %s\n[ours]: %s\n\n", strcpy(c, a), strcpy1(d, a));
   printf("Testing strncat(c, b, 2):\n[standard]: %s\n[ours]: %s\n\n", strncat(c, b, 2), strncat1(d, b, 2));
   printf("Testing strcmp(a, b):\n[standard]: %d\n[ours]: %d\n\n", strcmp(a, b), strcmp(a, b));
@@ -24,6 +24,7 @@ int main(){
   printf("Testing strchr(b, 'c'):\n[standard]: %p\n[ours]: %p\n\n", strchr(b, 'c'), strchr1(b, 'c'));
   printf("Testing strchr(b, 0):\n[standard]: %p\n[ours]: %p\n\n", strchr(b, 0), strchr1(b, 0));
   printf("Testing strchr(b, 'u'):\n[standard]: %p\n[ours]: %p\n\n", strchr(b, 'u'), strchr1(b, 'u'));
+  return 1;
 }
 
 
