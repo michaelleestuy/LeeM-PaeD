@@ -10,12 +10,20 @@ char* strchr1(char*, char);
 
 
 int main(){
-  char a[100] = "0123456";
+  char a[] = "0123";
   char b[] = "abc";
-
-  printf("regular: %p\nours: %p\n", strchr(a, '7'), strchr1(a, '7'));
-
-
+  char c[] = "sgag";
+  char d[] = "yergysersdfwe";
+  printf("a: [%s]\nb: [%s]\nc: [%s]\nd: [%s]\n\n", a, b, c, d);
+  printf("Testing strlen(b):\n[standard]: %d\n[ours]: %d\n\n", strlen(b), strlen1(b));
+  printf("Testing strcpy(c, a):\n[standard]: %s\n[ours]: %s\n\n", strcpy(c, a), strcpy1(d, a));
+  printf("Testing strncat(c, b, 2):\n[standard]: %s\n[ours]: %s\n\n", strncat(c, b, 2), strncat1(d, b, 2));
+  printf("Testing strcmp(a, b):\n[standard]: %d\n[ours]: %d\n\n", strcmp(a, b), strcmp(a, b));
+  printf("Testing strcmp(a, a):\n[standard]: %d\n[ours]: %d\n\n", strcmp(a, a), strcmp(a, a));
+  printf("Testing strcmp(b, a):\n[standard]: %d\n[ours]: %d\n\n", strcmp(b, a), strcmp(b, a));
+  printf("Testing strchr(b, 'c'):\n[standard]: %p\n[ours]: %p\n\n", strchr(b, 'c'), strchr1(b, 'c'));
+  printf("Testing strchr(b, 0):\n[standard]: %p\n[ours]: %p\n\n", strchr(b, 0), strchr1(b, 0));
+  printf("Testing strchr(b, 'u'):\n[standard]: %p\n[ours]: %p\n\n", strchr(b, 'u'), strchr1(b, 'u'));
 }
 
 
@@ -71,6 +79,9 @@ char* strchr1(char* arr, char a){
     if(a == arr[i])
       return &arr[i];
     i++;
+  }
+  if(arr[i] == a){
+    return &arr[i];
   }
   return NULL;
 }
